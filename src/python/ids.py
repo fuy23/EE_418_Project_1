@@ -85,7 +85,7 @@ class IDS:
 
         prev_acc_offset_us = self.acc_offset_us # You will use it later.
         a0 = self.batch_end_time_sec_hist[-2]   # Arrival timestamp of the last message in the previous batch
-                                                # You will use it later. 
+                                                # You will use it later.
 
         curr_avg_offset_us, curr_acc_offset_us = 0, 0
 
@@ -93,15 +93,21 @@ class IDS:
             # ====================== Start of Your Code =========================
             # TODO: Compute curr_avg_offset_us and curr_acc_offset_us for state-of-the-art IDS
 
-            # Your code goes here. 
-            
+            # Your code goes here.
+            sum = 0;
+            for i in range(2, self.N + 1):
+                sum += a[i] - (a[1] + (i - 1) * prev_mu_T_sec)
+            curr_avg_offset_us = sum / (self.N - 1)
+            curr_acc_offset_us = prev_acc_offset_us + abs(curr_avg_offset_us)
+
             # ====================== End of Your Code =========================
 
         elif self.mode == 'ntp-based':
             # ====================== Start of Your Code =========================
             # TODO: Compute curr_avg_offset_us and curr_acc_offset_us for NTP-based IDS
 
-            # Your code goes here. 
+            # Your code goes here.
+            curr_avg_offset_us = 
 
             # ====================== End of Your Code =========================
 
@@ -130,7 +136,7 @@ class IDS:
         #
         # TODO: Implement the RLS algorithm
 
-        # Your code goes here. 
+        # Your code goes here.
 
         # ====================== End of Your Code =========================
 
@@ -166,8 +172,8 @@ class IDS:
         # TODO: 1) Normalize curr_error_sample, 2) compute curr_L_upper and curr_L_lower
         # Store the normalized error in `normalized_error`
 
-        # Your code goes here. 
-        
+        # Your code goes here.
+
         # ====================== End of Your Code =========================
 
         if (curr_L_upper > self.Gamma) | (curr_L_lower > self.Gamma):

@@ -117,7 +117,7 @@ classdef IDS
                 % TODO: Compute curr_avg_offset_us and curr_acc_offset_us for NTP-based IDS.
                 
                 % Your code goes here.
-                curr_avg_offset_us = obj.elapsed_time_sec - (a(obj.N) - a0) / obj.N;
+                curr_avg_offset_us = obj.T_sec - ((a(obj.N) - a0) / obj.N);
                 curr_acc_offset_us = prev_acc_offset_us + obj.N * curr_avg_offset_us;
                 % ====================== End of Your Code =========================
             end

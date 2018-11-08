@@ -53,20 +53,20 @@ end
 
 %% TODO - Complete the following tasks.
 % Task 2: Plot accumulated offset curves for 0x184, 0x3d1, and 0x180, for the state-of-the-art IDS.
-% plot_acc_offsets(ids, 'state-of-the-art');
+plot_acc_offsets(ids, 'state-of-the-art');
 % % 
 % % % Task 3: Plot accumulated offset curves for 0x184, 0x3d1, and 0x180, for the NTP-based IDS.
-% plot_acc_offsets(ids, 'ntp-based');
+plot_acc_offsets(ids, 'ntp-based');
 % 
 % Task 4: Change N to 30, and repeat Tasks 2 and 3.
-%plot_acc_offsets(ids, 'state-of-the-art');
-%plot_acc_offsets(ids, 'ntp-based');
+plot_acc_offsets(ids, 'state-of-the-art');
+plot_acc_offsets(ids, 'ntp-based');
 
 % 
 % % Task 5: Simulate the masquerade attack, and plot upper/lower control limits.
-%simulation_masquerade_attack('state-of-the-art');
-%simulation_masquerade_attack('ntp-based');
+simulation_masquerade_attack('state-of-the-art');
+simulation_masquerade_attack('ntp-based');
 % 
 % % Task 6: Simulate the cloaking attack, and plot upper/lower control limits.
 simulation_cloaking_attack('state-of-the-art');
-% simulation_cloaking_attack('ntp-based');
+simulation_cloaking_attack('ntp-based');
