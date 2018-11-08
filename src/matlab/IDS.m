@@ -188,6 +188,7 @@ classdef IDS
             % - Use obj.kappa as the kappa value
             normalized_error = (curr_error_sample - mu_e) / sigma_e;
             
+            
  
             curr_L_upper = max(0, prev_L_upper + normalized_error - obj.kappa);
             curr_L_lower = max(0, prev_L_lower - normalized_error - obj.kappa);
